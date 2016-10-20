@@ -1,49 +1,114 @@
-<h1>Project Management Tool</h1>
+<div class="content">
 
-<h2>Create a new person</h2>
+    {{#if username}}
+        Welcome {{username}}! Make some burgers!
+    {{/if}}
 
-{{#if logged_in}}
-  <form action="/people/create" method="POST">
-    <input type="text" name="name">
+        <!--{{#unless logged_in}}-->
+    <!--<p> Sign up to add your burger! </p>-->
+        <!--{{/unless}}-->
 
-    <input type="submit">
-  </form>
-{{/if}}
+    {{#if logged_in}}
+        <h2>Create Your Own</h2>
 
-{{#unless logged_in}}
-  <p>
-    You must login to add a person.
-  </p>
-{{/unless}}
+        <form class="create-update-form" action="burgers/create" method="POST">
 
-<h2>People</h2>
+            <div class="form-group">
+                <label for="ca">Burger:</label>
+                <input type="text" id="ca" name="name">
+            </div>
 
-<ul>
-  {{#each people}}
-    <li>
-      {{this.name}}
-      {{#if ../logged_in}}
-        <a href="/people/{{this.id}}/destroy"> destroy</a>
-      {{/if}}
-      <ul>
-        {{#if ../logged_in}}
-          <li>
-            <form action="/people/{{this.id}}/tasks/create" method="POST" style="display: inline">
-              <input type="text" name="task" placeholder="add task here">
-              <input type="submit" value"assign task">
-            </form>
-          </li>
-        {{/if}}
+            <button type="submit">Add Burger</button>
+        </form>
+    {{/if}}
 
-        {{#each this.Tasks }}
-          <li>
-            {{this.task}}
-            {{#if ../../logged_in}}
-              <a href="/people/{{this.person_id}}/tasks/{{this.id}}/destroy">destroy</a>
-            {{/if}}
-          </li>
-        {{/each}}
-      </ul>
-    </li>
-  {{/each}}
-</ul>
+
+
+
+    <div class ="wrap">
+        <img src="../assets/sclogo.png" id="crimes-logo">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <!--Empty -->
+                </div>
+                <div class="col-lg-8">
+                    <h2 id="aboutSite"> A community dedicated to theorizing, conspirasizing and solving the strangest crimes. Add cold cases or contribute to solving current ones. There’s only one rule: never keep the curiosity door locked. </h2>
+                </div>
+                <div class="col-lg-2">
+                    <!--Empty-->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="..." alt="...">
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>...</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul>
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                    <li>
+                        {{this.name}} - created by {{this.User.email}}
+
+                        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button type="submit" class="btn btn-success">Devour!</button>
+                        </form>
+
+                        {{> burgers/delete-burger}}
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+
+        <!--<h2>Devoured!</h2>-->
+
+        <ul>
+            {{#each burgers}}
+                {{#if this.devoured}}
+                    <li>
+                        {{this.name}} - owned by {{this.User.email}}
+
+                        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="false">
+                            <button type="submit" class="btn btn-success">Make Me Another!</button>
+                        </form>
+
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p> Stranger Crimes Copyright 2016</p>
+            </div>
+            <div class="col-md-4">
+                <a href="#"> Contact Us </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"> Please Donate </a>
+            </div>
+        </div>
+    </div>
+</footer>
