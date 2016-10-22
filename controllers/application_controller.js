@@ -36,6 +36,10 @@ router.get('/', function(req, res) {
 
 router.get('/crimeapi', function (req, res) {
 	res.render('crimes/index');
+});
+
+router.get('/hanglee', function (req, res) {
+	res.render('cases/hlee');
 })
 
 module.exports = router;

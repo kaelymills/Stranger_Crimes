@@ -22,6 +22,7 @@
           var crime = data;
           console.log(crime);
           for (var i = 0; i < crime.length; i++) {
+            var link = crime[i].name.replace(/ /g, '');
             $holder = $('#holder'),
             $thumbnail = $('<div class ="thumbnail">');
             $img = $('<img>').attr('src', crime[i].photo).appendTo($thumbnail);
@@ -29,7 +30,7 @@
             $name = $('<h2>').text(crime[i].name).appendTo($thumbnail);
             $date = $('<h3>').text(crime[i].date).appendTo($thumbnail);
             $desc = $('<p>').text(crime[i].case).appendTo($thumbnail);
-            $readmore = $('<p><a href="/" class="btn btn-primary" role="button">Read More</a></p>').appendTo($thumbnail);
+            $readmore = $('<p><a href="/' + link + '" class="btn btn-primary" role="button">Read More</a></p>').appendTo($thumbnail);
 
             $thumbnail.appendTo($holder);
           }

@@ -1,0 +1,366 @@
+    <style>
+       
+        .Main_menu{
+                    float:left;
+                    border-left-style: solid;
+                    border-width: 1px; 
+                    border-color: #CCCCCC;
+                    height:40px;
+                    
+            
+        }
+        #topbar {
+                
+                width:1000px;
+                margin:0 auto;
+                height: 40px;
+                
+                
+            }
+        body{
+            margin: 0 ;
+            padding: 0;
+           
+        }
+        #signin{
+            width:20px;
+            margin:8px;
+            float:left;
+        }
+        
+        #logo{
+            width: 40px;
+            height:40px;
+            float:left;
+            margin-right: 5px;
+        }
+    
+        #sign-text{
+            font-weight: bold;
+            position: relative;
+            top:10px;
+            padding-right: 80px;
+            color:black;
+            text-decoration: none;
+        }
+        .menu_text{
+           
+            font-weight: bold;
+            font-family: arial;
+            font-size:13px;
+            position: relative; 
+            top:12px;
+            left:15px;
+            padding-right: 35px; 
+            color:black;
+            text-decoration: none;
+        }
+        .search{
+            
+            background-color: #E4E4E4;
+            border:none;
+            float:left;
+            font-weight: bold;
+            font-family: arial;
+            font-size:12px;
+            position: relative; 
+            top:10px;
+            left:10px;
+            padding-right: 20px; 
+            width:175px;
+            height:22px;
+        }
+        
+        #search_img{
+            background-color: #E4E4E4;
+            float:left;
+            position: relative; 
+            top:10px;
+            left:2px;
+            
+        }
+        #more_icon{
+            padding-left: 40px;
+        }
+        
+        .clear{
+            clear: both;
+        }
+        
+        #news{
+            width:100%;
+            background-color: #BB1919; 
+             margin:0 auto;
+             height: 70px;     
+        }
+        #news_text{
+            width:1000px;
+            padding-top: 7px;
+            margin:0 auto;
+            font-size: 42px;
+            font-family: helvetica;
+            color: white;
+            
+           
+        }
+        .submenu{
+             width:100%;
+             margin:0 auto;
+            background-color: #A91717;
+            height:33px;
+            
+        }
+        .submenu_text{
+            width:1000px;
+            margin:0 auto;
+            color:white;
+            font-family: helvetica;
+            font-size: 15px;
+            border-right:1px solid #BB4545;
+            padding:0px 10px;
+            position: relative;
+            top:3px;
+           
+        }
+    
+        #submenu_more_icon{
+            position:relative;
+            top:0px;
+            padding-left: 4px;
+        }
+        .noborder{
+            border:none !important;
+        }
+        
+        a.submenu_text:hover{
+            
+            border-bottom: 2px solid white;
+            
+        }
+       a.submenu_text:link{
+            text-decoration: none;
+        }
+        
+        #main_article{
+            width:600px;
+            margin:0 auto;
+            float:left;
+            border-bottom: 1px solid grey;
+            padding-bottom: 20px;
+            margin-left: 400px;
+        }
+        #page_container{
+             width:100%;
+            margin:0 auto;
+        }
+        #main_article_heading{
+            
+            font-family: helvetica;
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 100px;
+            float:left;
+            
+        }
+        
+        #main_article_summary{
+            font-family: helvetica;
+            font-size:16px;
+            width:200px;
+            color: #5A5A5F;
+            position: relative;
+            bottom:10px;
+            float:left;
+            height:200px;
+        }
+        
+        #main_article_image{
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        
+        #watch{
+            border-left:1px solid grey;
+            float:left;
+            margin-top: 100px;
+            margin-left:30px;
+            height:970px;
+            margin-bottom: 10px;
+        }
+        .watch_headline{
+            
+            font-family: helvetica;
+            font-size: 28px;
+            margin-left: 10px;
+            position: relative;
+            bottom:25px;
+            
+        }
+         
+        .videos{
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .watch_summary{
+            font-family: helvetica;
+            font-size:18px;
+            color: #5A5A5F;
+            margin-left: 10px;
+        }
+        .link{
+            text-decoration: none;
+            color:black;
+        }
+        a.link:visited{
+            text-decoration: none;
+            color: black;
+        }
+        a.lin:hover{
+            text-decoration: underline;
+        }
+        #additional_news{
+            width:600px; 
+            height:600px;
+            float:left;
+            position:relative;
+            bottom:630px;
+            margin-left:400px;
+        }
+        .technology_article{
+            background-color: #EDEDED;
+            float:left;
+            height:210px;
+            width: 205px;
+            position:relative;
+            bottom:20px;
+            margin-right: 10px;
+            margin-left: 30px;
+        }
+        .articles{
+            width:600px;
+            height:280px;
+            margin-top: 30px;
+        }
+        
+   
+    </style>    
+    </head>
+    
+    <body>
+    <audio autoplay="autoplay"><source src="public/assets/music/strangerthings.mp3" type="audio/mpeg"/></audio>
+        <div class="clear"></div>
+        
+        
+        <div id="news">
+        
+            <p id="news_text">Unsolved Case #21738 - Hang Lee </p>
+        
+        </div>
+            
+   
+        <div class="clear"></div>
+        
+        <div class="submenu">
+                <div class="submenu_text noborder">
+                <a class="submenu_text" href="crime.html">Home</a>
+                <!-- <a class="submenu_text" href="">Video</a>
+                <a class="submenu_text" href="">World</a>
+                <a class="submenu_text" href="">Asia</a>
+                <a class="submenu_text" href="">UK</a>
+                <a class="submenu_text" href="">Business</a>
+                <a class="submenu_text" href="">Tech</a>
+                <a class="submenu_text" href="">Science</a>
+                <a class="submenu_text" href="">Magazine</a>
+                <a class="submenu_text" href="">Entertainment & arts</a>
+                <a class="submenu_text" href="">Health</a>
+                <a  class="submenu_text noborder " href="">
+                    More
+                    <img id="submenu_more_icon" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png" width=15px height=10px>
+                </a> -->
+            </div>
+        </div>
+        
+        
+        <div id="page_container">
+            
+            <div id="main_article">
+                <p id="main_article_heading"><a> "Lorem ipsum dolor sit amet, consectetur <br> sed do eiusmod tempor incididunt ut labore et </a></p>
+                <div id="main_article_summary">
+                    
+                      <p>  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                    
+                        <img  src="https://image.freepik.com/free-icon/simple-circular-clock_318-39728.png" width="13" height="13"> 18 August 2016 | India
+                </div>
+                
+                            <img id="main_article_image" src="http://images.indianexpress.com/2016/08/sakshi-maliki-m.jpg" width="395" height="220" >
+                    
+                        
+                    
+            </div>
+            
+            
+            
+            
+             <div id="Watch">
+                  <p class="watch_headline">Solved Case Spotlight</p>
+
+
+
+                    <p class="watch_summary">COLD CASE MURDER FINALLY SOLVED AFTER 54 YEARS</p>
+                      <iframe class="videos" width="350" height="200" src="https://www.youtube.com/embed/uvLHVF7PVC8" allowfullscreen></iframe>
+                     <p class="watch_headline">  Additional Info</p>  
+                     <p class="watch_summary">
+                     <iframe class="text" width="350" height="600" src="http://www.charleyproject.org/cases/l/lee_hang.html"  allowfullscreen>
+                     </iframe>
+   
+        	</div>
+                <div id="additional_news">
+                    <div class="articles">
+                    <br>
+                    	<a><p class="watch_headline">Case Profile</p></a>
+
+                           <div class="technology_article">
+                            <a class="link" href="https://atap.google.com/ara/">
+                            <input type="image" src="http://core3.staticworld.net/images/article/2014/04/project-ara-1-100261479-carousel.idge.png" width="204px" height="115px">
+                            <p class="watch_summary">Lorem ipsum dolor.</p></a>
+                            
+                          </div>
+                        
+                        <div class="technology_article">
+                            <a class="link" href="https://www.google.com/selfdrivingcar/">
+                            <input type="image" src="http://cdn.mobilesyrup.com/wp-content/uploads/2015/10/google-self-driving-car-prototype-front-three-quarters-1.jpg" width="204px" height="115px">
+                            <p class="watch_summary">Lorem ipsum dolor sit amet, consectetur.</p></a>
+                        
+                        
+                        
+                        
+                        </div>
+                        
+                     </div>
+                     <br>
+                     <a><p class="watch_headline">Location</p></a>
+                     <div class="articles" id="map">
+                        <script>
+                                function initMap() {
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 9,
+                                center: {lat: 44.954445, lng: -93.091301}
+                                });
+                                var marker = new google.maps.Marker({
+                                position: {lat: 44.954445, lng: -93.091301},
+                                map: map,
+                                title: 'St. Paul , Minn'
+                                });
+                                };
+                          </script>
+                          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxKSymwm9RLnJ0tLGV8hqlEQj6b_VQTM4&callback=initMap&language=en&region=JP"
+                              async defer>
+                          </script>
+                     </div>                     
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+ 
+       </div>
