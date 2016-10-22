@@ -11,6 +11,80 @@
   </div>
 {{/unless}}
 
+
+<div class ="wrap">
+    <img src="../assets/sclogo.png" id="crimes-logo">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <!--Empty -->
+            </div>
+            <div class="col-lg-8">
+                <h2 id="aboutSite"> A community dedicated to theorizing, conspirasizing and solving the strangest crimes. Add cold cases or contribute to solving current ones. There’s only one rule: never keep the curiosity door locked. </h2>
+            </div>
+            <div class="col-lg-2">
+                <!--Empty-->
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="../assets/placeholder.jpg" id="crimes-logo">
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p>...</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        {{#each burgers}}
+            {{#unless this.devoured}}
+                <li>
+                    {{this.name}} - created by {{this.User.email}}
+
+                    <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button type="submit" class="btn btn-success">Devour!</button>
+                    </form>
+
+                    {{> burgers/delete-burger}}
+                </li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+
+    <!--<h2>Devoured!</h2>-->
+
+    <ul>
+        {{#each burgers}}
+            {{#if this.devoured}}
+                <li>
+                    {{this.name}} - owned by {{this.User.email}}
+
+                    <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="false">
+                        <button type="submit" class="btn btn-success">Make Me Another!</button>
+                    </form>
+
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+</div>
+
+
 {{#if logged_in}}
 <div class="row text-center">
   <div class="col-sm-4 col-md-4" id="holder">
