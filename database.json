@@ -19,6 +19,16 @@
             "phone": "407.246.2425",
             "link": "https://crimeline.org/",
             "crime_id": 2
+        },
+        {
+            "name": "Jamie Santos",
+            "photo": "http://vignette1.wikia.nocookie.net/unsolvedmysteries/images/7/7e/Jamie_santos1.jpg/revision/latest?cb=20110911020016",
+            "date": "10-28-1991",
+            "case": "The emergency line in Wheeling, Illinois, received a strange call on October 28, 1991. An unknown man called the emergency number, giving the address of an unconscious woman. Before the operator could get more information, he hung up the phone. Paramedics arrived on the scene to find exotic dancer Jamie Santos nearly dead in her home. Jamie appeared to have struggled with her killer and ultimately died from asphyxiation by pillow. (The previous day, Jamie cancelled various appointments, leading police to wonder whether she had expected something odd to happen.) Police believe a former customer may have killed Jamie, but with almost no evidence, the case never progressed.",
+            "article": "http://unsolvedmysteries.wikia.com/wiki/Jamie_Santos",
+            "phone": "(847) 459-2632",
+            "link": "42.1392",
+            "crime_id": 3
         }
     ]
 }
