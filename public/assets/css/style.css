@@ -1,6 +1,6 @@
 html {
 	height: 100%;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 body {
@@ -9,20 +9,28 @@ body {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
-	/*min-height: 100%;*/
+	height: 100%;
 	/*display: flex;*/
-	/*flex-direction: column;*/
+	flex-direction: column;
 	color: #ccc;
 
-	/*!*Parallax css*!*/
-	/*overflow-y: scroll;*/
-	/*overflow-x: hidden;*/
-	/*margin:0;*/
-	/*padding:0;*/
-	/*perspective: 1px;*/
-	/*transform-style: preserve-3d;*/
+	/*!*!*Parallax css*!*!*/
+	/*!*overflow-y: scroll;*!*/
+	/*!*overflow-x: hidden;*!*/
+	/*!*margin:0;*!*/
+	/*!*padding:0;*!*/
+	/*!*perspective: 1px;*!*/
+	/*!*transform-style: preserve-3d;*!*/
 
 }
+
+
+.wrap {
+	min-height: 100%;
+	height: auto;
+
+}
+
 button {
 	background-color: red;
 }
@@ -35,9 +43,9 @@ p {
 	padding: 5px;
 }
 
-html {
-	height: 100%;
-	overflow: hidden;
+/*html {*/
+	/*height: 100%;*/
+	/*overflow: hidden;*/
 }
 
 
@@ -48,9 +56,9 @@ html {
 }
 
 
-.content {
-	flex: 1;
-}
+/*.content {*/
+	/*flex: 1;*/
+/*}*/
 
 #crimes-logo {
 
