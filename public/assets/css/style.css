@@ -34,9 +34,6 @@ body {
 button {
 	background-color: red;
 }
-p {
-	color: #000;
-}
 
 .row {
 	margin: 0;
@@ -88,11 +85,26 @@ a {
 	color: white;
 }
 
+.login-prompt {
+	color: white;
+	text-shadow: 2px 2px black;
+	font-family: 'PT Sans', sans-serif;
+}
+
 #aboutSite {
 	color: white;
 	font-family: 'PT Sans', sans-serif;
 	font-size: x-large;
 	text-shadow: 2px 2px black;
+
+}
+
+#jumbotron1 {
+	background-color: transparent;
+}
+
+#jumbotron2 {
+	background-color: rgba(0,0,0,0.7);
 
 }
 

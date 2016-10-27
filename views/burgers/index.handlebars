@@ -6,14 +6,20 @@
 {{/if}}
 
 {{#unless logged_in}} 
-  <div class="text-center"> 
+  <div class="text-center login-prompt">
   <p> Sign up to start investigating crimes </p>
   </div>
 {{/unless}}
 
 
 <div class ="wrap">
+
+    <div class="jumbotron" id="jumbotron1">
+        <!--Just an empty jumbotron taking up space. -->
+    </div>
+
     <img src="../assets/sclogo.png" id="crimes-logo">
+
 
     <div class="container">
         <div class="row">
@@ -29,22 +35,6 @@
         </div>
     </div>
 
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="../assets/placeholder.jpg" id="crimes-logo">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <ul>
         {{#each burgers}}
