@@ -33,7 +33,9 @@ html {
 	font-family: 'PT Sans', sans-serif;
 }
 
-
+.cslink {
+    color: #000;
+}
 .content {
 	flex: 1;
 }
