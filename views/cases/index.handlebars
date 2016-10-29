@@ -9,8 +9,8 @@
         <div class="col-lg-6 col-lg RIGHT">
         <h2>Additional Links</h2>
         <p>Local Law Enforcement: {{crime.phone}}</p>
-        <p>Link: <a>{{crime.cslink}}</a></p> 
-        <p>Take on this Case!</p>
+        <p>Link: {{crime.cslink}}</p> 
+        <p>Take on this Case!</p> 
         {{#unless favorite}}
         <form class="create-update-form" action="/favorite" method="POST">
           <input type="hidden" name="favorite" value="{{crime.name}}" >
