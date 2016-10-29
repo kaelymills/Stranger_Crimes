@@ -40,23 +40,52 @@ router.get('/crimeapi', function (req, res) {
 	res.render('api/index');
 });
 
+router.post('/addnote', function (req, res) {
+  models.Note.create({
+    name: req.body.name,
+    crime_id: req.body.cid,
+    user_id: req.session.user_id
+  })
+  .then(function() {
+    res.redirect('back');
+  })
+});
+
 router.get('/readmore/:name', function (req, res) {
 	var name = req.params.name;
 	var user_id = req.session.user_id;
-	var crime = database.data.filter(function(crime) {
+	var crime = database.data.filter(function(crime) {  
 	return crime.name === name;
 	})[0];
+  var crime_id = crime.id;
+  console.log(crime_id);
 	models.Fave.findOne({
   	where: {user_id: user_id, fave_name: name},
 	}).then(function(favorite) {
-		  res.render('cases/index', {
-	      user_id: user_id,
-	      username: req.session.username,
-	      email: req.session.user_email,
-	      logged_in: req.session.logged_in,
-		  crime: crime,
-		  favorite: favorite
-	});
+    var favorite = favorite;
+      models.Note.findAll({ where: { crime_id: crime_id }, include: [ models.User ] 
+      }).then(function(note){
+        if(note) {
+          res.render('cases/index', {
+            user_id: user_id,
+            username: req.session.username,
+            email: req.session.user_email,
+            logged_in: req.session.logged_in,
+            crime: crime,
+            favorite: favorite,
+            note: note
+          }); 
+        } else {
+          res.render('cases/index', {
+            user_id: user_id,
+            username: req.session.username,
+            email: req.session.user_email,
+            logged_in: req.session.logged_in,
+            crime: crime,
+            favorite: favorite
+            });          
+        }
+      }); 
 })
 });
 

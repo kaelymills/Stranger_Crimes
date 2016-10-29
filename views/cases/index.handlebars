@@ -5,7 +5,6 @@
 
           <h1 id= "name">{{crime.name}}</h1>
           <p id = "article">{{crime.article}}</p>
-        
         </div>
         <div class="col-lg-6 col-lg RIGHT">
         {{#unless favorite}} 
@@ -21,31 +20,27 @@
               <p class="watch_headline">Solved Case Spotlight</p>
               <p class="watch_summary">COLD CASE MURDER FINALLY SOLVED AFTER 54 YEARS</p>
               <iframe class="videos" width="350" height="200" src="https://www.youtube.com/embed/uvLHVF7PVC8" allowfullscreen></iframe>   
-            </div>
+            </div> 
         {{#if favorite}}  
-        <h1>WE DID IT</h1>         
+        <h2>Notes</h2>
+        <ul>
+          {{#each note}}
+              <li>
+                {{this.name}} - {{this.User.username}}
+              </li>
+          {{/each}}
+        </ul>      
+          <form class="create-update-form" action="/addnote" method="POST">
+          <div class="form-group">
+            <input type="hidden" name="cid" value="{{crime.id}}" >           
+            <label for="note">Add a note:</label>
+            <input type="text" id="note" name="name">           
+            <button type="submit">Comment</button>
+          </div>
+        </form>   
         {{/if}}    
         </div>
-        </div>
-         <div class="articles" id="map">
-            <script>
-                    function initMap() {
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 9,
-                    center: {lat: 44.954445, lng: -93.091301}
-                    });
-                    var marker = new google.maps.Marker({
-                    position: {lat: 44.954445, lng: -93.091301},
-                    map: map,
-                    title: 'St. Paul , Minn'
-                    });
-                    };
-              </script>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxKSymwm9RLnJ0tLGV8hqlEQj6b_VQTM4&callback=initMap&language=en&region=JP"
-                  async defer>
-              </script>
-         </div>
-      
+        </div>  
       </div>
       <div id="footer">
       </div>

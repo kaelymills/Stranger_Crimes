@@ -11,5 +11,10 @@ Logic for user experience:
     
     
 Back end logic (for our sanity):
-    
-    -to be continues...
+
+	-User table to store users
+	-Favorites table to store user favorites
+	-Notes table that has a one to many relationship with user
+	-Crime database stored in our own API
+	-Dynamically serve data from api and tables to handlebar pages
+	

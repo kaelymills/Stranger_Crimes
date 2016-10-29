@@ -21,6 +21,8 @@ Fave.sync();
 var User = require("./models")["User"];
 User.sync();
 
+var Note = require("./models")["Note"];
+Note.sync();
 // Express settings
 // ================
 
@@ -44,8 +46,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
