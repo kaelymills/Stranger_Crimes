@@ -1,9 +1,10 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var Burger = sequelize.define("Burger", {
-    name: DataTypes.STRING,
-    devoured: { type: DataTypes.BOOLEAN, defaultValue: false }
+  var Fave = sequelize.define("Fave", {
+    fave_name: DataTypes.STRING,
+    user_id: DataTypes.INTEGER,
+    crime_id: DataTypes.INTEGER,
   }, {
     // don't add the timestamp attributes (updatedAt, createdAt)
       //timestamps: false,
@@ -23,20 +24,8 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true,
 
     // define the table's name
-    tableName: 'burgers',
-
-    classMethods: {
-      associate: function(models) {
-        Burger.belongsTo(models.User, {
-          onDelete: "CASCADE",
-          hooks: true,
-          foreignKey: {
-            allowNull: false
-          }
-        })
-      }
-    }
+    tableName: 'faves',
   });
 
-  return Burger;
+  return Fave;
 };

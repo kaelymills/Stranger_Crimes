@@ -26,9 +26,9 @@ module.exports = function(sequelize, DataTypes) {
     // define the table's name
     tableName: 'users',
 
-    classMethods: {
+/*    classMethods: {
       associate: function(models) {
-        User.hasMany(models.Burger, {
+        User.hasMany(models.Note, {
           onDelete: "CASCADE",
           hooks: true,
           foreignKey: {
@@ -36,8 +36,9 @@ module.exports = function(sequelize, DataTypes) {
           }
         })
       }
-    }
-  })
+    }*/
+});
 
   return User;
 };
+

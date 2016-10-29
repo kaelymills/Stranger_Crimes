@@ -1,0 +1,53 @@
+    <div id="ww">
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-lg LEFT">
+
+          <h1 id= "name">{{crime.name}}</h1>
+          <p id = "article">{{crime.article}}</p>
+        
+        </div>
+        <div class="col-lg-6 col-lg RIGHT">
+        {{#unless favorite}} 
+        <p>Take on this Case!</p>
+        <form class="create-update-form" action="/favorite" method="POST">
+          <input type="hidden" name="favorite" value="{{crime.name}}" >
+          <input type="hidden" name="favoriteid" value="{{crime.id}}" >
+          <button type="submit">Favorite</button>
+        </form>
+        {{/unless}}
+        <div id="Watch">
+              <br>
+              <p class="watch_headline">Solved Case Spotlight</p>
+              <p class="watch_summary">COLD CASE MURDER FINALLY SOLVED AFTER 54 YEARS</p>
+              <iframe class="videos" width="350" height="200" src="https://www.youtube.com/embed/uvLHVF7PVC8" allowfullscreen></iframe>   
+            </div>
+        {{#if favorite}}  
+        <h1>WE DID IT</h1>         
+        {{/if}}    
+        </div>
+        </div>
+         <div class="articles" id="map">
+            <script>
+                    function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 9,
+                    center: {lat: 44.954445, lng: -93.091301}
+                    });
+                    var marker = new google.maps.Marker({
+                    position: {lat: 44.954445, lng: -93.091301},
+                    map: map,
+                    title: 'St. Paul , Minn'
+                    });
+                    };
+              </script>
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxKSymwm9RLnJ0tLGV8hqlEQj6b_VQTM4&callback=initMap&language=en&region=JP"
+                  async defer>
+              </script>
+         </div>
+      
+      </div>
+      <div id="footer">
+      </div>
+  </div>
+  </div>

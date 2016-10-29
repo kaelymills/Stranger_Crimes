@@ -13,12 +13,10 @@ var methodOverride = require('method-override'); // for deletes in express
 // Our model controllers (rather than routes)
 var application_controller = require('./controllers/application_controller');
 
-var burgers_controller = require('./controllers/burgers_controller');
-
 var users_controller = require('./controllers/users_controller');
 
-var Burger = require("./models")["Burger"];
-Burger.sync();
+var Fave = require("./models")["Fave"];
+Fave.sync();
 
 var User = require("./models")["User"];
 User.sync();
@@ -33,7 +31,7 @@ var app = express();
 app.use(methodOverride('_method'));
 
 //allow sessions
-app.use(session({ secret: 'app', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true}));
+app.use(session({ secret: 'app', cookie: { maxAge: 100 * 1000 }, resave: true, saveUninitialized: true}));
 app.use(cookieParser());
 
 // view engine setup
@@ -55,7 +53,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', application_controller);
-app.use('/burgers', burgers_controller);
 app.use('/users', users_controller);
 
 // catch 404 and forward to error handler

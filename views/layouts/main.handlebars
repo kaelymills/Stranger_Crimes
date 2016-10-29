@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Francois+One|Coming+Soon" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans|Raleway" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/assets/css/style.css" type="text/css"/> -->
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-
-    <!--SEO Additions-->
-    <link rel="icon" href="../../public/assets/favicon2.ico" type="image/x-icon">
-    <meta property="og:description" content="Stranger Crimes is a crowd-sourcing solution to solving cold cases. Join the biggest collection of cold cases and participate in a community that's committed to understanding, researching and solving crimes.">
-    <meta name="description" content="Stranger Crimes is a crowd-sourcing solution to solving cold cases. Join the biggest collection of cold cases and participate in a community that's committed to understanding, researching and solving crimes.">
-    <title>Stranger Crimes: Crowd-sourcing crime solutions for murders, disappearances, kidnapping, UFOs, supernatural events, and much more.  </title>
-
-</head>
-<body class="text-center content">
-
-<header id="header" class="header">
-    <p id="login">
-        {{#unless logged_in}}
-            <a href="/users/sign-in">Sign In</a>
-            |
-            <a href="/users/new">Sign Up</a>
-        {{/unless}}
-
-        {{#if logged_in}}
-            Welcome {{email}}! <br>
-            You are user {{user_id}}.<br>
-            <a href="/users/sign-out">Sign Out</a>
-        {{/if}}
-    </p>
-</header>
-
-{{{ body }}}
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans|Raleway" rel="stylesheet">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css"/>	
+		<title>Stranger Crimes</title>
+	</head>
+	<body class="text-center">
+	<header id="header" class="header">	
+			{{#unless logged_in}}
+				<a href="/users/sign-in">Sign In</a>
+				|
+				<a href="/users/new">Sign Up</a>				
+				<audio autoplay="autoplay"><source src="/assets/music/strangerthings.mp3" type="audio/mpeg"/></audio>
+			{{/unless}}
+			{{#if logged_in}}
+			    <div class="navbar navbar-inverse navbar-static-top">
+			      <div class="container"> 
+			        <div class="navbar-header">
+			          <img src="/assets/images/user.png" alt="Stanley" width="75px" height="75px">
+			          <br>
+			          <a class="navbar-brand" href="/profile">Detective {{username}}</a>
+			        </div>
+			        <div class="navbar-collapse collapse">
+			        <img src="/assets/images/sclogo.png" class="logo">
+			          <ul class="nav navbar-nav navbar-right">
+			            <li><a href="/" id="menu">Home</a></li>
+			            <li><a href="/" id="menu">Community Case</a></li>
+			            <li><a href="/users/sign-out" id="menu">Sign Out</a></li>
+			          </ul>
+			        </div>
+			      </div>
+			    </div>
+			{{/if}}
+	</header>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		{{#unless logged_in}}
+		<img src="/assets/images/sclogo.png">
+        <div class="row">
+            <div class="col-lg-2">
+                <!--Empty -->
+            </div>
+            <div class="col-lg-8">
+                <h2 id="aboutSite"> A community dedicated to theorizing, conspirasizing and solving the strangest crimes. Add cold cases or contribute to solving current ones. There’s only one rule: never keep the curiosity door locked. </h2>
+            </div>
+            <div class="col-lg-2">
+                <!--Empty-->
+            </div>
+        </div>
+		{{/unless}}
+		{{{ body }}}
+	</body>
 </HTML>
