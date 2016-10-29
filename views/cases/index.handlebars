@@ -7,9 +7,9 @@
           <p id = "article">{{crime.article}}</p>
         </div>
         <div class="col-lg-6 col-lg RIGHT">
-        <p>Additional Links</p>
+        <h2>Additional Links</h2>
         <p>Local Law Enforcement: {{crime.phone}}</p>
-        <p>Link: {{crime.cslink}}</p> 
+        <p>Link: <a>{{crime.cslink}}</a></p> 
         <p>Take on this Case!</p>
         {{#unless favorite}}
         <form class="create-update-form" action="/favorite" method="POST">
