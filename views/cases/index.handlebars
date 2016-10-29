@@ -7,8 +7,11 @@
           <p id = "article">{{crime.article}}</p>
         </div>
         <div class="col-lg-6 col-lg RIGHT">
-        {{#unless favorite}} 
+        <p>Additional Links</p>
+        <p>Local Law Enforcement: {{crime.phone}}</p>
+        <p>Link: {{crime.cslink}}</p> 
         <p>Take on this Case!</p>
+        {{#unless favorite}}
         <form class="create-update-form" action="/favorite" method="POST">
           <input type="hidden" name="favorite" value="{{crime.name}}" >
           <input type="hidden" name="favoriteid" value="{{crime.id}}" >
